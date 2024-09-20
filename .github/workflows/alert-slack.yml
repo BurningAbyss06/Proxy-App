@@ -1,0 +1,22 @@
+name: Notificador-Slack
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment: SLACK
+    env:
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+    steps:
+      - uses: act10ns/slack@v2
+        with:
+          status: ${{ job.status }}
+          steps: ${{ toJson(steps) }}
+          channel: "#workflow"
+          config: config/slack.yml
+        if: always()
+      - name: Checkout
+        uses: actions/checkout@v4
