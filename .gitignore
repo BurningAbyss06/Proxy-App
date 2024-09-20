@@ -1,3 +1,6 @@
+.env
+github-actions.yml
+
 # build output
 dist/
 
