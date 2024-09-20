@@ -20,5 +20,3 @@ jobs:
         if: always()
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          config: .github/config/slack.yml
