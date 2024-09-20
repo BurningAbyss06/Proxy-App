@@ -1,4 +1,4 @@
-username: GitHub
+username: GitHub Actions
 
 pretext: Triggered via {{eventName}} by {{actor}} {{or action "action"}} {{ref}} `{{diffRef}}`
 title: GitHub Actions
