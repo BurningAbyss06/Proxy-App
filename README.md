@@ -1,2 +1,2 @@
 # Proxy-App
-Monitor de entrenamiento de Omega Proxy
+Monitor de entrenamiento de Omega Proxy.
