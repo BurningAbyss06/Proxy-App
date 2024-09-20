@@ -1,9 +1,7 @@
-username: GitHub-CI
-icon_url: https://octodex.github.com/images/mona-the-rivetertocat.png
+username: GitHub
 
 pretext: Triggered via {{eventName}} by {{actor}} {{or action "action"}} {{ref}} `{{diffRef}}`
 title: GitHub Actions
-title_link: https://support.github.com
 
 text: |
   *<{{workflowRunUrl}}|Area de trabajo _{{workflow}}_ trabajo _{{jobName}}_ lanzado por _{{eventName}}_ is _{{jobStatus}}_>* en <{{refUrl}}|`{{ref}}`>
