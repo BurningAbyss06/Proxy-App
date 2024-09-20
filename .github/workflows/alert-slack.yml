@@ -2,7 +2,7 @@ name: Notificador-Slack
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build:
@@ -16,7 +16,7 @@ jobs:
           status: ${{ job.status }}
           steps: ${{ toJson(steps) }}
           channel: "#workflow"
-          config: config/slack.yml
+          config: .github/config/slack.yml
         if: always()
       - name: Checkout
         uses: actions/checkout@v4
