@@ -16,7 +16,7 @@ jobs:
           status: ${{ job.status }}
           steps: ${{ toJson(steps) }}
           channel: "#workflow"
-          config: .github/config/slack.yml
+          config: .github/slack.yml
         if: always()
       - name: Checkout
         uses: actions/checkout@v4
