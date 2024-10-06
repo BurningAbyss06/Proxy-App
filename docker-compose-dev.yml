@@ -8,6 +8,7 @@ services:
       POSTGRES_PASSWORD: W1909
     volumes:
       - postgres-data:/var/lib/postgresql/data
+
   api:
     build:
       context: ./server
@@ -17,9 +18,12 @@ services:
       - database
     develop:
       watch:
-        - action: sync
+        - action: rebuild
           path: ./server
           target: /usr/src/app
+    ports:
+      - "8080:8080"
+
   web:
     build:
       context: ./client

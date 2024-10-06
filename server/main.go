@@ -1,8 +1,18 @@
 package main
 
-import "fmt"
+import (
+	"net/http"
+
+	"github.com/Angxandralol/Proxy-App/server/database"
+	"github.com/Angxandralol/Proxy-App/server/routes"
+	"github.com/gorilla/mux"
+)
 
 func main() {
-	fmt.Println("Hola mundo")
-	fmt.Println("Hola")
+	database.DBConnection()
+	r := mux.NewRouter()
+
+	r.HandleFunc("/", routes.HolaMundo)
+
+	http.ListenAndServe(":8080", r)
 }
