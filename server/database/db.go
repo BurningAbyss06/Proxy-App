@@ -3,6 +3,7 @@ package database
 import (
 	"log"
 
+	"github.com/Angxandralol/Proxy-App/server/models"
 	"github.com/Angxandralol/Proxy-App/server/utilities"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
@@ -19,5 +20,12 @@ func DBConnection() {
 		log.Fatal(err)
 	} else {
 		log.Println("Se Conecto a la DB")
+	}
+	if err = DB.AutoMigrate(
+		models.User{},
+		models.Match{},
+		models.Deck{},
+	); err != nil {
+		log.Fatalln(err)
 	}
 }
